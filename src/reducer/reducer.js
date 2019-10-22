@@ -21,6 +21,8 @@ export const intState = {
 export function reducer (state = intState, action){
     switch(action.type){
         case ADD_ITEM :
+            const recentAdditionalFeatures = state.additionalFeatures.filter(featureToRemove => featureToRemove !== action.payload);
+            console.log(recentAdditionalFeatures)
             return {
                 ...state,
                 car : {
@@ -29,7 +31,8 @@ export function reducer (state = intState, action){
                         ...state.car.features,
                          action.payload
                         ]
-                }
+                },
+                additionalFeatures : recentAdditionalFeatures
             }
         case REMOVE_ITEM :
             const newFeatures = state.car.features.filter(itemToDelete => itemToDelete !== action.payload);

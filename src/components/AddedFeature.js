@@ -9,7 +9,6 @@ const AddedFeature = props => {
   }
   return (
     <li>
-      {/* Add an onClick to run a function to remove a feature */}
       <button className="button" onClick = { handleClick } >X</button>
       {props.feature.name}
     </li>
@@ -17,6 +16,12 @@ const AddedFeature = props => {
 };
 
 
+const mapStateToProps = state => {
+    console.log(state)
+  return {  
+    feature: state
+  }
+}
 export default connect(null, {
   removeItem
 })(AddedFeature);
