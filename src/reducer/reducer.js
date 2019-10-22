@@ -32,9 +32,13 @@ export function reducer (state = intState, action){
                 }
             }
         case REMOVE_ITEM :
-            console.log(action.payload)
-            return {
-                
+            const newFeatures = state.car.features.filter(itemToDelete => itemToDelete !== action.payload);
+            return{
+                ...state,
+                car : {
+                    ...state.car,
+                    features: newFeatures
+                }
             }
         default:
             return state;
