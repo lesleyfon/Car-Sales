@@ -20,9 +20,15 @@ export const intState = {
 export function reducer (state = intState, action){
     switch(action.type){
         case ADD_ITEM :
-            console.log(action.payload)
+            const cars ={ ...state.car,
+                features : action.payload    
+            }
             return {
                 ...state,
+                car : {
+                    ...state.car,
+                    features: action.payload
+                }
             }
         default:
             return state;
