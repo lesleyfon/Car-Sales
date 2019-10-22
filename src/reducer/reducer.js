@@ -1,3 +1,4 @@
+import {ADD_ITEM} from './../actions/add'
 
 export const intState = {
     additionalPrice: 0,
@@ -17,6 +18,14 @@ export const intState = {
   }
 
 export function reducer (state = intState, action){
-    
-    return state;
+    switch(action.type){
+        case ADD_ITEM :
+            console.log(action.payload)
+            return {
+                ...state,
+            }
+        default:
+            return state;
+    }
+   
 }

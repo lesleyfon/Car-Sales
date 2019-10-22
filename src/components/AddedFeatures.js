@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import AddedFeature from './AddedFeature';
 
-const AddedFeatures = ({features}) => {
+const AddedFeatures = ({ features }) => {
   return (
     <div className="content">
       <h6>Added features:</h6>
