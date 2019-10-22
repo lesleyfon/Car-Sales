@@ -19,7 +19,6 @@ const AdditionalFeature = props => {
 };
 
 const mapStateToProps = state => {
-    console.log(state)
   return {
 
   }

@@ -1,4 +1,5 @@
 import {ADD_ITEM} from './../actions/add'
+import { stat } from 'fs';
 
 export const intState = {
     additionalPrice: 0,
@@ -20,14 +21,14 @@ export const intState = {
 export function reducer (state = intState, action){
     switch(action.type){
         case ADD_ITEM :
-            const cars ={ ...state.car,
-                features : action.payload    
-            }
             return {
                 ...state,
                 car : {
                     ...state.car,
-                    features: action.payload
+                    features: [
+                        ...state.car.features,
+                         action.payload
+                        ]
                 }
             }
         default:
