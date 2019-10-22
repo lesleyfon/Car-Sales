@@ -1,6 +1,5 @@
 import {ADD_ITEM} from './../actions/add'
 import {REMOVE_ITEM} from './../actions/removeItem'
-import { stat } from 'fs';
 
 export const intState = {
     additionalPrice: 0,
@@ -35,6 +34,7 @@ export function reducer (state = intState, action){
         case REMOVE_ITEM :
             console.log(action.payload)
             return {
+                
             }
         default:
             return state;
